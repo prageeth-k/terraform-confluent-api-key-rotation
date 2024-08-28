@@ -39,7 +39,7 @@ resource "time_static" "api_key_rotations" {
 resource "confluent_api_key" "kafka-api-key" {
     count = var.num_keys_to_retain
     display_name = replace(var.key_display_name, "{date}", time_static.api_key_rotations[count.index].rfc3339)
-    description  = "API Key managed by Terraform using Confluent API Key Rotation Module"
+    description  = var.description
 
     # Readiness check. Defaults to false
     disable_wait_for_ready = var.disable_wait_for_ready

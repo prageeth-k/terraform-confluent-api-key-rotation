@@ -32,6 +32,12 @@ variable "disable_wait_for_ready" {
     description = "Disables readiness check if set to true. Deaults to false"
 }
 
+variable "description" {
+    type = string
+    default = "API Key managed by Terraform using Confluent API Key Rotation Module"
+    description = "Description for the API Key"
+}
+
 variable "owner" {
     type = object({
         id = string
