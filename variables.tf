@@ -26,6 +26,12 @@ variable "key_display_name" {
     description = "A discriptive name for the API key. If you put `{date}` in the string. The Date of API Key creation will be replace into the string at that location."
 }
 
+variable "disable_wait_for_ready" {
+    type = bool
+    default = false
+    description = "Disables readiness check if set to true. Deaults to false"
+}
+
 variable "owner" {
     type = object({
         id = string

@@ -56,7 +56,10 @@ module "api-key-rotation" {
     source  = "nerdynick/api-key-rotation/confluent"
     version = "0.1.0"
 
-    #Required Inputs
+    # Optional Inputs
+    disable_wait_for_ready = true # defaults to false
+
+    # Required Inputs
     owner = {
         id          = confluent_service_account.example-sa.id
         api_version = confluent_service_account.example-sa.api_version
